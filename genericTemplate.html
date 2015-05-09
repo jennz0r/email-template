@@ -6,149 +6,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style type="text/css">
 
-    #outlook a {padding:0;}
-    body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; font-family: "helvetica", sans-serif;}
-    .ExternalClass {width:100%;}
-    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} 
-    .background-table {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
-
-    img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
-    a img {border:none;}
-    .image_fix {display:block;}
-
-    p {margin: 1em 0;}
-
-    h1, h2, h3, h4, h5, h6 {color: black !important;}
-    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
-    h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {color: red !important;}
-    h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {color: purple !important;}
-
-    table td {border-collapse: collapse;}
-    table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
-
-    a {color: blue;}
-
-    .background-table {
-      display: block;
-      max-width: 600px; 
-      background-color: #ffffff;
-      font-size: 16px;
-      margin-top: 0 auto;
-    }
-
-    .headerBar {
-      height: 10px;
-      line-height: 10px; 
-      background-color: #71B5E6;
-    }
-
-    .contentBegin {
-      padding: 10px 5px;
-    }
-
-    .sidebar {
-      background-color: #71B5E6;
-      width: 10px;
-    }
-
-
-    @media only screen and (max-width: 480px), (max-device-width: 480px) {
-      .background-table {
-        max-width: 480px;
-        font-size: 18px;
-        margin: 0px;
+      body {
+        width: 100% !important; 
+        margin: 0; /* Ensures alignment to top edge of screen */
+        padding: 0; /* Ensures alignment to top edge of screen */
+        color: #666666;
+        font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
       }
 
-      .headerBar {
-        height: 5px !important;
-        line-height: 5px !important;
+      img {
+        outline: none;
+        text-decoration: none;
+        border: none;
       }
 
-      .contentBegin {
-        padding: 10px !important;
+      a {
+        color: #ff0051;
       }
 
-      .sidebar {
-        width: 5px !important;
+      /* Avoid collapsing outer table in MS */
+      .ExternalClass {
+        width: 100%;
       }
-    }
 
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-      .background-table {
+      /* Reset line-height in MS */
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      /* Remove extra right/left space in MS */
+      table {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt; 
+      }
+
+      .table--wrapper {
+        display: block;
+        width: 100% !important;
         max-width: 600px;
-      }
-    }
-
-    /* Retina Images */
-    @media all and (min-device-pixel-ratio : 1.5), all and (-webkit-min-device-pixel-ratio: 1.5) {
-      span[class="badge"] {
-        display:inline-block;
-        background-image: url('img/badge');
-        background-size: 100px 30px;
-        background-repeat: no-repeat;
-        width: 100px; !important;
-        height: 30px; !important;
+        margin: 0 auto;
+        padding: 0;
+        background-color: #ffffff;
+        font-size: 16px;
+        line-height: 100% !important;
       }
 
-      span[class="badge"] img {
-        display: none;
+      .bar--header {
+        height: 10px;
+        line-height: 10px; 
+        background-color: #ff0051;
       }
-    }
 
+      .content--main {
+        padding: 10px 5px;
+      }
+
+      .bar--side {
+        background-color: #ff0051;
+        width: 10px;
+      }
+
+      /* Responsive Styles */
+      @media only screen and (max-width: 480px), (max-device-width: 480px) {
+        .table--wrapper {
+          max-width: 480px;
+          font-size: 18px;
+          margin: 0px;
+        }
+
+        .bar--header {
+          height: 5px !important;
+          line-height: 5px !important;
+        }
+
+        .content--main {
+          padding: 10px !important;
+        }
+
+        .bar--side {
+          width: 5px !important;
+        }
+
+        .bar--footer {
+          padding:0 5px !important; 
+        }
+
+        .title {
+          font-size: 1.5em !important;
+        }
+      }
+
+      /* Max Width Bypass (Avoid fluid width on wide screens) */
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        .table--wrapper {
+          width: 600px;
+        }
+      }
+
+      /* Retina Images */
+      @media all and (min-device-pixel-ratio : 1.5), all and (-webkit-min-device-pixel-ratio: 1.5) {
+        span[class="img--donut"] {
+          display: inline-block;
+          background-image: url('img/donut-hd.png');
+          background-size: 150px 105px;
+          background-repeat: no-repeat;
+          width: 150px; !important;
+          height: 105px; !important;
+        }
+
+        span[class="img--donut"] img {
+          display: none;
+        }
+      }
     </style>
   </head>
 
   <body>
     <!--Wrapper Table Begin-->
-    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="background-table" style="display: block; max-width: 600px; background-color: #ffffff; font-size: 16px; margin: 0 auto;">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="table--wrapper" style="display:block;  max-width:600px;  background-color:#ffffff;  font-size:16px;  margin:0 auto;">
       <!--Header Begin-->
       <tr>
-        <td colspan="3" class="headerBar" style="line-height: 10px; height: 10px; background-color: #71B5E6;">
+        <td colspan="3" class="bar--header" style="height:10px;  line-height:10px;  background-color:#ff0051;">
           <span>&nbsp;</span>
         </td>
       </tr>
       <!--Header End-->
       <tr>
         <!--Sidebar Begin-->
-        <td class="sidebar" style="background-color: #71B5E6; width: 10px;">
+        <td class="bar--side" style="background-color:#ff0051;  width:10px;">
           <span>&nbsp;</span>
         </td>
         <!--Sidebar End-->
-        <td class="contentBegin" style="padding: 10px 5px;">
-          <table width="100%">
+        <td class="content--main" style="padding:10px 5px;">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
             <tr>
               <td>
-                <!--Content Begin-->
-                <jsp:include page="/WEB-INF/jsp/email${JSP_BODY}.jsp">
-                <jsp:param name="logo" value="${logo}" />
-                <jsp:param name="logoLarge" value="${logoLarge}" />
-                <jsp:param name="logoSolo" value="${logoSolo}" />
-              </jsp:include>
-              <!--Content End-->
-            </td>
-          </tr>
-        </table>
-      </td>
-      <!--Sidebar Begin-->
-      <td class="sidebar" style="background-color: #71B5E6; width: 10px;">
-        <span>&nbsp;</span>
-      </td>
-      <!--Sidebar End-->
-    </tr>
-    <!--Footer Begin-->
-    <tr>
-      <td colspan="3" class="footer" style="background-color: #71B5E6; line-height: 10px;">
-        <img src="img/footer-img" width="100%" class="footerImage" style="width: 100%; background-color: #71B5E6;">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3" valign="bottom" align="center" class="unsubscribe" style="padding: 10px; font-size: 11px;">
-        <span>
-          <a href="#" target="_blank">Unsubscribe</a> | <a href="#" target="_blank">Update your preferences</a>
-        </span>
-      </td>
-    </tr>
-    <!--Footer End-->
+                <!--Content: here's where your unique email content would go-->
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td>
+                      <span>
+                        <img src="img/donut.png" alt="donut logo" style="padding:5px;">
+                      </span>
+                    </td>
+                    <td>
+                      <p class="title" style="color:#ff0051;  font-size:2.5em;  font-weight:600;">mochimachine</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="padding:0 10px;">
+                      <div style="width: 100%;">
+                        <p>Dear Peppermint Butler,</p>
+                        <p>Cupcake ipsum dolor sit amet toffee. Lemon drops apple pie tiramisu pie brownie wafer tootsie roll. Marzipan toffee donut soufflé.</p>
+                        <p>Cake dessert lemon drops jelly. Gummies cake halvah jelly-o macaroon chocolate bar cake halvah halvah. Jelly carrot cake marzipan. Candy canes chupa chups toffee biscuit gummi bears carrot cake lemon drops.</p>
+                        <p>Liquorice croissant jelly beans pie. Lemon drops cheesecake chocolate cake croissant danish. Muffin topping sugar plum chocolate cake tart apple pie toffee.</p>
+                        <p>Sincerely,</p>
+                        <p>Princess Bubblegum</p>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <!--End Content-->
+              </td>
+            </tr>
+          </table>
+        </td>
+        <!--Sidebar Begin-->
+        <td class="bar--side" style="background-color:#ff0051;  width:10px;">
+          <span>&nbsp;</span>
+        </td>
+        <!--Sidebar End-->
+      </tr>
+      <!--Footer Begin-->
+      <tr>
+        <td colspan="3" class="bar--footer" style="padding:0 10px 5px 10px; background-color:#ff0051;">
+          <img src="img/footer.jpg" width="100%" alt="footer" style="width:100%;  background-color:#ff0051;">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="bottom" align="center" class="unsubscribe" style="padding:10px;  font-size:11px;">
+          <span>
+            <a href="#" target="_blank">Unsubscribe</a> | <a href="#" target="_blank">Update Preferences</a>
+          </span>
+        </td>
+      </tr>
+      <!--Footer End-->
     </table>
   </body>
 </html>
