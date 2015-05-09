@@ -1,4 +1,4 @@
 Email Template
 ==============
 
-My customized email (outer/wrapper table) template for HotPads email revamp.
+My customized wrapper `<table>` template for responsive emails.
